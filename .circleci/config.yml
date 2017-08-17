@@ -43,3 +43,4 @@ workflows:
           requires:
             - required-1
             - required-2
+            - optional-1
