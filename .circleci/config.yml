@@ -1,24 +1,32 @@
 version: 2
 jobs:
   required-1:
+    docker:
+      - image: ubuntu:14.04
     steps:
       - run:
         name: succeed
         command: return 0
         no_output_timeout: 10s
   required-2:
+    docker:
+      - image: ubuntu:14.04
     steps:
       - run:
         name: succeed
         command: return 0
         no_output_timeout: 10s
   optional-1:
+    docker:
+      - image: ubuntu:14.04
     steps:
       - run:
         name: fail
         command: return 1
         no_output_timeout: 10s
   fan_in:
+    docker:
+      - image: ubuntu:14.04
     steps:
       - run:
         name: succeed
