@@ -5,33 +5,33 @@ jobs:
       - image: circleci/node
     steps:
       - run:
-        name: succeed
-        command: return 0
-        no_output_timeout: 10s
+          name: succeed
+          command: return 0
+          no_output_timeout: 10s
   required-2:
     docker:
       - image: circleci/node
     steps:
       - run:
-        name: succeed
-        command: return 0
-        no_output_timeout: 10s
+          name: succeed
+          command: return 0
+          no_output_timeout: 10s
   optional-1:
     docker:
       - image: circleci/node
     steps:
       - run:
-        name: fail
-        command: return 1
-        no_output_timeout: 10s
+          name: fail
+          command: return 1
+          no_output_timeout: 10s
   fan_in:
     docker:
       - image: circleci/node
     steps:
       - run:
-        name: succeed
-        command: return 0
-        no_output_timeout: 10s
+          name: succeed
+          command: return 0
+          no_output_timeout: 10s
 workflows:
   version: 2
   optional_test:
@@ -40,6 +40,6 @@ workflows:
       - required-2
       - optional-1
       - fan_in:
-        requires:
-          - required-1
-          - required-2
+          requires:
+            - required-1
+            - required-2
